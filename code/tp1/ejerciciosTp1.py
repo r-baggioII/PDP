@@ -81,6 +81,23 @@ def invertiRecursive(L,i,j):
 #l = [1,2,3,4]
 #print(invertir(l)) # [5,4,3,2,1]
 
+'''
+Escribir una función que simule el siguiente experimento: Se tiene una rata en una jaula
+con 3 caminos, entre los cuales elige al azar (cada uno tiene la misma probabilidad), si elige
+el 1 luego de 3 minutos vuelve a la jaula, si elige el 2 luego de 5 minutos vuelve a la jaula,
+en el caso de elegir el 3 luego de 7 minutos sale de la jaula. La rata no aprende, siempre
+elige entre los 3 caminos con la misma probabilidad, pero quiere su libertad, por lo que
+recorrerá los caminos hasta salir de la jaula.
+La función debe devolver el tiempo que tarda la rata en salir de la jaula. Ejemplo:
+>>> ratatuille(randint(1,3))
+Va por camino 1
+Va por camino 1
+Va por camino 2
+Va por camino 2
+Va por camino 3
+Tiempo total: 23
+'''
+
 def ratatuille(n):
    return ratauilleRecursive(n,0) 
 
@@ -96,4 +113,12 @@ def ratauilleRecursive(n,count):
     
     return ratauilleRecursive(random.randint(1,3),count)
     
-print(ratatuille(random.randint(1,3))) 
+#print(ratatuille(random.randint(1,3))) 
+def Allways(n): 
+    if n == 1: 
+        return 1 
+    if n == 2: 
+        return 2
+    return Allways(n-1) + Allways(n-2)
+
+print(Allways(3)) 
