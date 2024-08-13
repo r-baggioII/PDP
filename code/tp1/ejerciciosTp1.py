@@ -68,4 +68,15 @@ def vectoresIgualesRecursive(a,b):
 #print(vectoresIguales(a,a)) True 
 #print(vectoresIguales(a,b)) False 
 
- 
+def invertir(L):
+    return invertiRecursive(L,0, len(L))
+def invertiRecursive(L,i,j): 
+    if j <=0:
+        return L 
+    L.insert(j,L[i])
+    L.pop(i)
+    return invertiRecursive(L,0,j-1)
+
+#l = [1,2,3,4]
+#print(invertir(l)) # [5,4,3,2,1]
+
