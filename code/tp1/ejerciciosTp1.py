@@ -1,3 +1,4 @@
+import random 
 #Serie Fibonnacci 
 def fibonnaci(n):
     if n == 0:
@@ -80,3 +81,19 @@ def invertiRecursive(L,i,j):
 #l = [1,2,3,4]
 #print(invertir(l)) # [5,4,3,2,1]
 
+def ratatuille(n):
+   return ratauilleRecursive(n,0) 
+
+def ratauilleRecursive(n,count): 
+    print('Va por camino ', n)
+    if n == 1: 
+        count += 3
+    elif n == 2:
+        count += 5
+    if n == 3:
+        count += 7
+        return count
+    
+    return ratauilleRecursive(random.randint(1,3),count)
+    
+print(ratatuille(random.randint(1,3))) 
