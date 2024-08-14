@@ -25,7 +25,7 @@ en donde se encuentra b dentro de a. Ejemplo:
 
 '''
 def posiciones_de(a,b,X,i):
-    for j in range(len(a)):
+    for j in range(i,len(a)):
         if a[j] == b[0]:
             for k in range(j,len(b)):
                 if a[k] != b[k-j]:
@@ -35,6 +35,8 @@ def posiciones_de(a,b,X,i):
 
 print(posiciones_de("Un tete a tete con Tete", "te",[],0))
 '''
+'''
+
 def posiciones_de(a,b,X,i):
     if len(b) <= 0:
         return X
@@ -46,6 +48,25 @@ def posiciones_de(a,b,X,i):
 
 #posiciones_de("estashola", "ho",[],0)
 #print(posiciones_de("Un tete a tete con Tete", "te",[],0))
+'''
+
+def posiciones_de(a, b, X, i):
+    return posiciones_deRecursive(a, b, X, i)
+
+def posiciones_deRecursive(a, b, X, j):
+    if j >= len(a):
+        return X
+    if not b:
+        return X
+    if a[j] == b[0]:
+        if len(b) == 1:
+            X.append(j-1)
+        else:
+            return posiciones_deRecursive(a, b[1:], X, j+1)
+    return posiciones_deRecursive(a, b, X, j+1)
+
+
+print(posiciones_de("Un tete a tete con Tete", "te",[],0))
 
 '''
 Escribir una función booleana recursiva llamada VectoresIguales que reciba dos listas como
@@ -121,4 +142,4 @@ def Allways(n):
         return 2
     return Allways(n-1) + Allways(n-2)
 
-print(Allways(3)) 
+#print(Allways(3)) 
