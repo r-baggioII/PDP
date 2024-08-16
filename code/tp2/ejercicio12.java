@@ -6,7 +6,7 @@ y setters. Finalmente, generar una instancia en el método main.
 
 package code.tp2;
 
-public class ejercicio13 {
+public class ejercicio12 {
     
     public static class Persona{
         private String nombre;
