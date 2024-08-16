@@ -65,7 +65,6 @@ def posiciones_deRecursive(a, b, X, j):
             return posiciones_deRecursive(a, b[1:], X, j+1)
     return posiciones_deRecursive(a, b, X, j+1)
 
-
 print(posiciones_de("Un tete a tete con Tete", "te",[],0))
 
 '''
