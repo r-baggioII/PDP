@@ -32,9 +32,13 @@ public class ejercicio4 {
                 System.err.println("El libro ahoraa está prestado");
             }
         }
+        public String transformarATexto(){
+            return "Titulo: " + this.titulo + " Autor: " + this.autor;
+        }
     }   
 
     public static void main(String[] args) {
-        
+        Libro libro1 = new Libro("El señor de los anillos", "J.R.R. Tolkien");
+        System.out.println(libro1.transformarATexto());
     }
 }
