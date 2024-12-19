@@ -17,3 +17,6 @@ enqueueHelper x (h:hs) | priority x <= priority h = x: h:hs
 enqueue :: Element a -> PriorityQueue a -> PriorityQueue a 
 enqueue x (PriorityQueue xs) = PriorityQueue (enqueueHelper x xs)
 
+
+
+

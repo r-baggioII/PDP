@@ -1,10 +1,10 @@
-data Set a = Set [a] deriving (Show,Eq) 
+data Set a = UnSet [a] deriving (Show,Eq) 
 
-s = Set [1,2,3]
+s = UnSet [1,2,3]
 
-s1 = Set ['a','n','c']
-s2 = Set ["hola","como","estas"]
-s3 = Set [1.0,2.5,3.8]
+s1 = UnSet ['a','n','c']
+s2 = UnSet ["hola","como","estas"]
+s3 = UnSet [1.0,2.5,3.8]
 
 --Insterta un elemento en el conjunto en una posición 
 
@@ -19,7 +19,7 @@ add x set = if not(elem x set) then addAux x set else set
 addAux x set = (x:set)
 
 --Elimina un elemento del set 
-
+ 
 delete x set = if not(elem x set) then set else deleteAux x set 
 deleteAux x (h:hs) | x == h = hs 
                 |otherwise = [h] ++ (delete x hs)
@@ -32,3 +32,7 @@ sumaImpar x y = odd (x + y)
 
 cumpleCondicion f x y  = f x y  
 
+safeDivision :: (Fractional a, Eq a) => a -> a -> Maybe a 
+safeDivision x y 
+  | y == 0    = Nothing 
+  | otherwise = Just (x / y)
